@@ -1,9 +1,11 @@
-# Step 1: Base image chunein
-FROM nginx:alpine
+# Choose a base image
+FROM node:18-alpine
 
-# Step 2: Apni static files copy karein
-COPY /usr/share/nginx/html/index.html
+# Set the working directory inside the container
+WORKDIR /app
 
-# Nginx default roop se port 80 par chalta hai, isliye EXPOSE ki jarurat nahi hai,
-# lekin yeh ek achha practice hai.
-EXPOSE 80 
+# Copy your files from the current directory (.) on your local machine to the /app directory inside the container
+COPY . .
+
+# Run your application
+CMD ["node", "server.js"]
