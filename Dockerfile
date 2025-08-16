@@ -9,3 +9,4 @@ COPY . .
 
 # Run your application
 CMD ["node", "server.js"]
+EXPOSE 8000
