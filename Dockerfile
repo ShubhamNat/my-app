@@ -1,12 +1,9 @@
-# Choose a base image
-FROM nginx
+# Use the official Nginx base image
+FROM nginx:alpine
 
-# Set the working directory inside the container
-WORKDIR /app
+# Copy the index.html file from your local machine to the Nginx web root directory
+# The default web root for Nginx is /usr/share/nginx/html
+COPY index.html /usr/share/nginx/html/index.html
 
-# Copy your files from the current directory (.) on your local machine to the /app directory inside the container
-COPY /usr/share/nginx/html/index.html  
-
-# Run your application
-
-EXPOSE 8000
+# Expose port 80 to the outside world
+EXPOSE 80
