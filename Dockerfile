@@ -6,4 +6,4 @@ FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
 
 # Expose port 80 to the outside world
-EXPOSE 80
+EXPOSE 5000
